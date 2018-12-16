@@ -1,0 +1,72 @@
+#File: fuzzybugcontroller.fll
+Engine: ObstacleAvoidance
+
+
+InputVariable: Angle
+enabled: true
+range: -50 500
+lock-range: false
+
+term: finalsharpleft Ramp 130 100
+term: finalleft Triangle 100 130 160
+term: finalcenter Triangle 130 160 190
+term: finalright Triangle 160 190 220
+term: finalsharpright Ramp 190 220
+
+
+InputVariable: ObstacleDirection
+  enabled: true
+  range: -1.6 1.6
+  lock-range: false
+  term: right Ramp 0 -1.57
+  term: center Triangle -0.785 0.000 0.785
+  term: left Ramp 0 1.57
+
+InputVariable: ObstacleDistance
+  enabled: true
+  range: 0 10
+  lock-range: false
+  term: veryclose Ramp 1 0
+  term: close Triangle 0.8 1.40 2
+  term: far Ramp 1.8 2.5
+
+OutputVariable: SteerDirection
+  enabled: true
+  range: -1.57 1.57
+  lock-range: false
+  aggregation: Maximum
+  defuzzifier: Centroid 100
+  default: 0
+  lock-previous: false
+
+    term: sharpleft  Ramp -0.15 -0.3
+    term: left       Triangle -0.3 -0.15 0
+    term: straight    Triangle -0.3 0.000 0.3
+    term: right        Triangle 0 0.15 0.3
+    term: sharpright   Ramp  0.15 0.3
+
+
+OutputVariable: Speed
+  enabled: true
+  range: -1 1
+  lock-range: false
+  aggregation: Maximum
+  defuzzifier: Centroid 100
+  default: 0
+  lock-previous: false
+  term: backward Ramp  0.1 -1
+  term: forward  Ramp  -0.1 1
+
+RuleBlock: mamdani
+  enabled: true
+  conjunction: Minimum
+  disjunction: Maximum
+  implication: Minimum
+  activation: General
+
+
+    rule: if Angle is finalsharpleft then SteerDirection is sharpleft and Speed is forward
+    rule: if Angle is finalleft then SteerDirection is left and Speed is forward
+    rule: if Angle is finalcenter then SteerDirection is straight and Speed is forward
+    rule: if Angle is finalright then SteerDirection is right and Speed is forward
+    rule: if Angle is finalsharpright then SteerDirection is sharpright and Speed is forward
