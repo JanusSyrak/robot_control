@@ -1,0 +1,27 @@
+Test 1
+cv::Mat img = generateRandomMap(10, 10);
+std::cout << img << std::endl << std::endl;
+wavefront(img);
+std::cout << img << std::endl;
+    
+    
+Test 2 and Test 3
+To run the second and third tests, use the following commands.
+Please note that the scale that is commented might be necessary for larger maps.
+
+cv::Mat img;
+img = cv::imread("<path to large occlusion map", 0);
+display_image(img, "Big World Map");
+
+cv::Mat new_img = img.clone();
+prepareWavefront(new_img);
+
+wavefront(new_img, 20, 20);
+//scale(new_img, 255/find_largest_pixel(new_img));
+drawWavefront(new_img, 150, 100);
+
+display_image(new_img, "Wavefront");
+
+
+
+
