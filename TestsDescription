@@ -1,0 +1,10 @@
+Tests:
+All the tests are to be found in the Detect() function in main.cpp, commented out. The are located in following lines:
+
+Histogram test: Line 110
+
+The center of the closest marble: Lines 145-153
+
+Max and min saturation value: Lines 161-175
+
+Low saturated pixels (edges of marbles): Lines 183-194
