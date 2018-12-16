@@ -1,0 +1,11 @@
+To run each test Qtcreator must be setup with the files in the robot_control folder
+For some of the test models have been created, therefore copy the models in the models folder to the original models folder in rb-rca5-master.
+
+The tests from the PDF is coresponding to the following folder:
+
+Collision occurence --> fuzzy-controller1-runtime
+Corner test --> fuzzy-controller1-corner
+Wall test --> fuzzy-controller1-wall
+Target close to object test --> fuzzy-controller-final-targetPoint
+	2 Test under Target close to object test --> fuzzy-controller-final-wall
+Multiple point test --> fuzzy-controller-final-finalTest

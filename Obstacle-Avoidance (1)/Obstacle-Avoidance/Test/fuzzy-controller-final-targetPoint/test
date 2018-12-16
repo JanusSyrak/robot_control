@@ -1,0 +1,75 @@
+The purpose of the test is to clarify the closest distance a target point can have to an obstacle.
+The test will also investigate if there is any tendency of steering right or left for the robot while driving towards a obstacle perpendicular.
+The obstlace is a wall like object. 4 meters long, 1 meter wide. ranging from (y = - 1.5 , y = 1.5) 
+The test is run with the bigworld file fuzzy-controller-final/big
+with varying distance of the unit boxes x pose from (x = 8.5 , x = 11)
+The target is on the oposite site of the robot with respect to the obstacle.
+The blue marble is considered the goal for the robot and the test will end if the robot reaches the goal or colides with an object
+Robot initial pose for evry test: <0 0 0 0 0 0> 
+Distance from obstacle to target position (distance is from the center of the target position and center of the objects x pose) 
+
+Both server and client connections to gazebo is closed for evry test in order to insure correct intial pose. 
+
+the test will answer true if the robot reaches the target position and false if coliding with an object or otherwise not reaching target position. 
+The choise of steering direction when facing the wall perpendicular is noted including any other tendency or collision.
+
+In order to run the test set the goalX and goalY floats in main.cpp as the target position
+
+3.5 meters distance from object to target (center Target_X cordinate to center Object_x cordinate)
+Test1: true, right
+Test2: true, right
+Test3: true, right
+Test4: true, right
+Test5: true, right
+
+2.5 meters distance from object to target 
+Test1: true, right
+Test2: true, right
+Test3: true, right
+Test4: true, right
+Test5: true, right
+
+1.5 meters distnace from object to target
+Test1: true, right
+Test2: true, right
+Test3: true, right
+Test4: true, right
+Test5: true, right
+
+Note target position will be refered to as a blue marble from now on
+1 meters distance from object to marble (Closest distance possible, object and marble outer shell touching)
+Test1: false, right   
+NOTE Test1: The robot is at first not driving directly through the blue marlbe. Only touching the outer shell of the marble but making another go for the marble
+90% of the robot is inside of the bluemarlbe. 
+	
+Test2: false, left
+Note test2: Same as for test1, cant go directly through COM of the marble. 
+
+Test3. false, right
+Note test3: same as for previous tests
+
+Test4: true , right
+Note test4: This time eventually reaching COM of the marble after 5 tries
+
+Test5: false, right
+Note test5: Same as for test1
+
+test6: false, right
+Note test6: not directly through COM but verry close in 2 try
+
+test7: false, right
+Note test7: same as for test1
+
+test8: false, right
+Note test8: same as for test1
+
+test9: false, right
+Note test9: stopped after 5 tries only reaching 80 % inside blue marble
+
+test10: false, right
+Note test10: same as test1
+
+
+
+
+ 

@@ -1,0 +1,80 @@
+The purpose of the test is to verify if there is still a tendency of coliding with an obstacle or wall when facing it perpendicular
+The test is run 25 times with a range of one meter to the wall due to the earlyer outcomes of test for fuzzy-controller1
+The test is now run with a target point at X = 12 and Y = 0
+The test is performed with the bigwolrd file folder final_controller2_straightwall_again
+The test will answer true if the robot reached the target position and false if colliding with an obstacle
+For each test run gazebo is rebooted in order to make sure that the robot is in the intial position. 
+Distance to object is from robot initial position (0,0) 
+The test is run with the file fuzzy-controller-final-wall/big
+
+Distance to obstacle: 1 meter (Obstacle = unit wall)
+test1: true
+test2: true
+test3: true
+test4: true
+test5: true
+test6: true
+test7: true
+test8: true
+test9: true
+test10: true
+test11: true
+test12: true
+test13: true
+test14: true
+test15: true
+test16: true
+test17: true
+test18: true
+test19: true
+test20: true
+test21: true
+test22: true
+test23: true
+test24: true
+test25: true
+
+Distance to obstacle: 3 meter (Obstacle = unit wall)
+test1: true
+test2: true
+test3: true
+test4: true
+test5: true
+
+Distance to obstacle: 5 meter (Obstacle = unit wall)
+test1: true
+test2: true
+test3: true
+test4: true
+test5: true
+
+
+second test is run with same bigworld file as for the test of facing a wall perpendicular with fuzzy-controller1
+Distance to obstacle: 1 meter (Obstacle = wall ("thomas_box") 4 meters wide)
+test1: true
+test2: true
+test3: true
+test4: true
+test5: true
+test6: true
+test7: true
+test8: true
+test9: true
+test10: true
+test11: true
+test12: true
+test13: true
+test14: true
+test15: true
+test16: true
+test17: true
+test18: true
+test19: true
+test20: true
+test21: true
+test22: true
+test23: true
+test24: true
+test25: true
+
+

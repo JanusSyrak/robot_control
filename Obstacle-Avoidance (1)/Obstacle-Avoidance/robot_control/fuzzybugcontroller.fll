@@ -1,0 +1,107 @@
+#File: fuzzybugcontroller.fll
+Engine: ObstacleAvoidance
+InputVariable: ObstacleDirection
+  enabled: true
+  range: -1.57 1.57
+  lock-range: false
+  term: right Ramp 0 -1.57
+  term: centerRight Triangle -0.6 -0.3 0
+ # term: center Triangle -0.3 0.000 0.3
+  term: centerLeft Triangle 0 0.3 0.6
+  term: left Ramp 0 1.57
+
+InputVariable: ObstacleDistance
+  enabled: true
+  range: 0 10
+  lock-range: false
+  term: veryclose Ramp 0.4 0
+  term: closer Triangle 0.2 0.4 0.6
+  term: close Triangle 0.4 0.7 1
+  term: medium Triangle 0.7 1 1.3
+  term: distant Triangle 1 1.4 1.8
+  term: far Ramp 1.6 2.3
+
+InputVariable: PointAngle
+  enabled: true
+  range: -3.14 3.14
+  lock-range: false
+  term: pos Ramp 0 3.14
+  term: zero Triangle -0.3 0 0.3
+  term: neg Ramp 0 -3.14
+
+OutputVariable: SteerDirection
+  enabled: true
+  range: -1.57 1.57
+  lock-range: false
+  aggregation: Maximum
+  defuzzifier: Centroid 100
+  default: 0
+  lock-previous: false
+  term: smallleft Triangle -0.6 -0.3 0
+  term: sharpleft Ramp -1 -1.57
+  term: left      Triangle -1.2 -0.600 0
+  term: straight   Triangle -0.2 0.000 0.2
+  term: right       Triangle 0 0.6 1.2
+  term: sharpright  Ramp  1 1.57
+  term: smallright Triangle 0 0.3 0.6
+
+OutputVariable: Speed
+  enabled: true
+  range: -1 1
+  lock-range:false
+  aggregation: Maximum
+  defuzzifier: Centroid 100
+  default: 0
+  lock-previous: false
+  term: veryslow Triangle  -0.2 0.1 0.4
+  term: slow Triangle 0 0.2 0.4
+  term: regular Triangle 0.2 0.4 0.6
+  term: fast Triangle 0.4 0.6 0.8
+  term: veryfast Ramp 0.6 0.8
+
+RuleBlock: mamdani
+  enabled: true
+  conjunction: Minimum
+  disjunction: Maximum
+  implication: Minimum
+  activation: General
+
+
+#  rule: if ObstacleDistance is far then SteerDirection is straight
+#  rule: if ObstacleDistance is medium then SteerDirection is straight
+#  rule: if ObstacleDistance is distant then SteerDirection is straight
+  rule: if ObstacleDistance is far then Speed is veryfast
+  rule: if ObstacleDistance is distant then Speed is fast
+  rule: if ObstacleDistance is medium then Speed is regular
+  rule: if ObstacleDistance is close then Speed is slow
+  rule: if ObstacleDistance is closer then Speed is veryslow
+  rule: if ObstacleDistance is veryclose then Speed is veryslow
+
+
+  rule: if ObstacleDistance is close and ObstacleDirection is centerRight then SteerDirection is left
+  rule: if ObstacleDistance is close and ObstacleDirection is centerLeft then SteerDirection is right
+  rule: if ObstacleDistance is closer and ObstacleDirection is centerRight then SteerDirection is left
+  rule: if ObstacleDistance is closer and ObstacleDirection is centerLeft then SteerDirection is right
+  rule: if ObstacleDistance is closer and ObstacleDirection is right then SteerDirection is smallleft
+  rule: if ObstacleDistance is closer and ObstacleDirection is left then SteerDirection is smallright
+  rule: if ObstacleDistance is veryclose and ObstacleDirection is centerRight then SteerDirection is sharpleft
+  rule: if ObstacleDistance is veryclose and ObstacleDirection is centerLeft then SteerDirection is sharpright
+  rule: if ObstacleDistance is veryclose and ObstacleDirection is right then SteerDirection is left
+  rule: if ObstacleDistance is veryclose and ObstacleDirection is left then SteerDirection is right
+
+#  rule: if PointAngle is pos then SteerDirection is left
+#  rule: if PointAngle is zero then SteerDirection is straight
+#  rule: if PointAngle is neg then SteerDirection is right
+
+
+  rule: if PointAngle is pos and ObstacleDistance is far then SteerDirection is left
+  rule: if PointAngle is zero and ObstacleDistance is far then SteerDirection is straight
+  rule: if PointAngle is neg and ObstacleDistance is far then SteerDirection is right
+  rule: if PointAngle is pos and ObstacleDistance is distant then SteerDirection is left
+  rule: if PointAngle is zero and ObstacleDistance is distant then SteerDirection is straight
+  rule: if PointAngle is neg and ObstacleDistance is distant then SteerDirection is right
+  rule: if PointAngle is pos and ObstacleDistance is medium then SteerDirection is left
+  rule: if PointAngle is zero and ObstacleDistance is medium then SteerDirection is straight
+  rule: if PointAngle is neg and ObstacleDistance is medium then SteerDirection is right
+
+

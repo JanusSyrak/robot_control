@@ -1,0 +1,100 @@
+The test is run with the bigworld inviroment : fuzzy-controller1/big
+with the poses of the corner obect states for each test
+The purpose of the test is to veryfy the hypothesis that the robot will get stuck when facing a corner.
+The test is repeated 5 times for evry pose of the corner with the same angle to the corner, splitting it in a 45 degrees angle, and with a random angle within +- 15 degrees 
+
+The test is noted true if there is a collision with the corner
+
+
+
+**********************big world corner setting****************************
+    <!-- corner -->
+	<model name="corner">
+	    <pose>x 3.5 0 0 0 0</pose>
+		<include>
+		  <static>true</static>
+		  <uri>model://corner</uri>
+		</include>
+	</model>
+*************************************************************************
+
+Pose setting is displayed along with the distance in meters to the corner.
+
+
+1 meters afstand    <pose>-5 3.5 0 0 0 0</pose>
+Test 1: true
+Test 2: true
+Tets 3: true
+Test 4: true
+Test 5: true
+random: angle (within +- 15 degress rufly)
+Test 1: true
+Test 2: true
+Test 3: true
+Test 4: true
+Test 5: true
+
+2 meters afstand <pose>-4 3.5 0 0 0 0</pose>
+Test 1: true
+Test 2: true 
+Test 3: true
+Test 4: true
+Test 5: true
+random angle (within +-15 degrees rufly)
+Test 1: true
+Test 2: true
+Test 3: true
+Test 4: true
+Test 5: true 
+
+3 meters afstand <pose>-3 3.5 0 0 0 0</pose> 
+Test 1: true
+Test 2: true 
+Test 3: true
+Test 4: true
+Test 5: true
+random angle (within +-15 degrees rufly)
+Test 1: true
+Test 2: true
+Test 3: true
+Test 4: true
+Test 5: true 
+
+Distance: 5 meters <pose>-1 3.5 0 0 0 0</pose> 
+Test 1: true
+Test 2: true 
+Test 3: true
+Test 4: true
+Test 5: true
+
+random angle (within +-15 degrees rufly)
+Test 1: true
+Test 2: true
+Test 3: true
+Test 4: false
+Test 5: true
+
+
+Distance 8 meters <pose 2 3.5 0 0 0 0 </pose> 
+Test 1: true
+Test 2: true 
+Test 3: true 
+Test 4: true
+Test 5: true
+
+random angle (withing +- 15 degrees rufly)
+Test 1: true
+Test 2: false
+Test 3: false
+Test 4: true
+Test 5: true
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,62 @@
+The purpose of the test is to obtain information of how long the robot is able to navigate forward without coiliding with obstacles.
+The test is preformed in the bigworld enviroment. The file is avalible in the folder final_controller_runtime, filename: big
+copy paste the inviroment into rb-rca5-master/bigworld.world
+
+Gazebo is rebooted for evry run in order to spawn new random marbles that will under the test serve the purpose of objects. 
+
+Test1: video4 
+Runtime 1.13 sec
+Collision: getting stuck in a corner
+
+Test2: video5
+Runtime:2.01
+Collision: Driving along wall facing corner and getting stuck facing wall (other wall on right side)
+
+Test3: video7
+Runetime: 11.09
+Collision: Facing wall straight forward, getting stuck straight forward.
+
+Test4: video8
+Runetime: 0.45
+Collision: Driving along wall facing small corner wall getting stuck facing wall (other wall is on right side)
+
+Test5 video9
+Runetime: 46.13 
+Collision: no collision occured, test stopped
+
+Test6 video10
+Runetime:27.10
+Collision: facing corner with small obstacle on right side getting stuck in corner
+
+Test7 video11
+Runetime: 2.08
+Collision: Stuck in corner
+
+Test8 video 12
+Runetime: 12:57
+Collision: Driving along wall towards a corner getting stuck facing the wall
+
+Test9 video 13
+Runetime: 4:10
+Collision: Driving towards corner getting stuck
+
+Test10 video 14
+Runtime: 5:28
+Collision: Driving along wall towards a corner getting stuck facing the wall
+
+Test11 video 15
+Runtime: 6:31
+Collision: Driving along wall towards a corner getting stuck facing the wall
+
+Test12 video 16
+Runtime: 9:17
+Collsion: Driving along wall towards a corner getting stuck facing the wall
+
+Test13 video 17
+Runtime: 00:32
+Collsion: Drives straight towards a wall getting stuck
+
+Test14 video 18
+Runtime: 7:40
+Collision: Getting stuck between an obsticle (Marble) and a wall
+

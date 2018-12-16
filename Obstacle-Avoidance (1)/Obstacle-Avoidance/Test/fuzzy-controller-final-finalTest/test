@@ -1,0 +1,31 @@
+The purpose of the test is to clerify the complications of the tendency of the robot driving to the right or left in certain situations. 
+It is previously observed that in a senario where the robot is driwing towards a target position directly towards the Center of the target 
+with an obstacle between and the robot is driwing from the intial position X = 0 and Y = 0 and with the center of the object and target in Y = 0, 
+that the robot will turn right almost evry time. 
+
+In the test the robot will drive to two fixed target positions in fixed order.
+The test is run with the robot from an inital pose of 0.0 towards target1 at (12,0) and target2 at (-20,2)
+The target is set in main goalX,goalY,gaolX2,goalY2
+
+an abstract object is implementet in the bigworld file towards the first obstacle along with servel unit_cylinder object towards the second target
+The test is run with the bigworld file in fuzzy-controller-final-finalTest/big.
+
+The test will answer true if the robot choosees the same route for each testrun and reaches both targets (it is observed in intial runs that there is a tendency of the robot driving the same route is)
+
+Test1:  true
+Test2:  true
+Test3:  true
+Test4:  true
+Test5:  true
+Test6:  true
+Test7:  true
+Test8:  true
+Test9:  true
+Test10: true
+Test11: true
+Test12: true
+Test13: true
+Test14: true
+Test15: true
+
+Picture of the route (white arrows) and an alternative and faster route (green arrows) is in the folder final_test

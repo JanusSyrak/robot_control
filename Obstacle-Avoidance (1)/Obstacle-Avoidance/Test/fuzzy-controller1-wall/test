@@ -1,0 +1,86 @@
+The purpose of the test is to test the tendency of the robot coliding with a wall when facing it perpendicular.
+The test is run with diffrent distance to the wall. 
+The test is run with the bigworld inviroment in fuzzy-controller1-wall/big
+
+
+
+1 meters distance
+1 test:  Stuck
+2 test:  Turns right without getting stuck
+3 test:  Turns right without getting stuck
+4 test:  Turns right without getting stuck
+5 test:  Turns right without getting stuck
+6 test:  Turns right without getting stuck
+7 test:  Turns right without getting stuck
+8 test:  Stuck
+9 test:  Stuck
+10 test: Stuck
+11 test:  Turns right without getting stuck
+12 test:  Turns right without getting stuck
+
+
+2 meters distance
+1 test: Turns right without getting stuck
+2 test: Turns right without getting stuck
+3 test: Turns right without getting stuck
+4 test: Turns right without getting stuck
+
+3 meters distance
+1 test: Turns right without getting stuck
+2 test: Turns right without getting stuck
+3 test: Turns right without getting stuck
+4 test: Turns right without getting stuck
+
+4 meters distance
+1 test: Turns right without getting stuck
+2 test: Turns right without getting stuck
+3 test: Turns right without getting stuck
+4 test: Turns right without getting stuck
+
+5 meters distance
+1 test: Turns right without getting stuck
+2 test: Turns right without getting stuck
+3 test: Turns right without getting stuck
+4 test: Turns right without getting stuck
+
+6 meters distance
+1 test: Turns right without getting stuck
+2 test: Turns right without getting stuck
+3 test: Turns right without getting stuck
+4 test: Turns right without getting stuck
+
+8 meters distance
+1 test: Turns right without getting stuck
+2 test: Turns right without getting stuck
+3 test: Turns right without getting stuck
+4 test: Turns right without getting stuck
+
+
+with target point on oposite side of obstacle 
+
+1 meters distance
+1 test:  Stuck
+2 test:  Stuck
+3 test:  Stuck
+4 test:  Stuck
+
+2 meters distance
+1 test: Stuck
+2 test: Stuck
+3 test: Stuck
+4 test: Stuck
+
+3 meters distance
+1 test: Stuck
+2 test: Stuck
+3 test: Stuck
+4 test: Stuck
+
+5 meters distance
+1 test: Stuck
+2 test: Stuck
+3 test: Stuck
+4 test: Stuck
+
+
+
