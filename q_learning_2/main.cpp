@@ -21,7 +21,7 @@ float negative_reward = -3;
 int max_steps = 100;
 
 std::vector<double> results;
-std::vector<double> meanreasult;
+std::vector<double> meanresult;
 
 int start_x = 2;
 int start_y = 2;
@@ -72,7 +72,6 @@ float GetReward(state s, action a)
 
     if (!(next.is_visited))
     {
-      //  std::cout << "return next.retard" << std::endl;
         return next.reward;
     }
     else
@@ -235,7 +234,7 @@ int main()
     allocateRewards();
 
     for (int i  = 0; i < max_iterations; i++)
-        meanreasult.push_back(0);
+        meanresult.push_back(0);
 
     // Main learning loop
     for (int iteration = 0; iteration < max_iterations; iteration++)
@@ -330,7 +329,7 @@ int main()
 
     ofstream myfile;
 
-    myfile.open ("/home/syrak/q_learning_2/johnhitler.txt");
+    myfile.open ("/home/syrak/q_learning_2/results.txt");
 
     for (int i = 0; i < 5; i++)
     {
